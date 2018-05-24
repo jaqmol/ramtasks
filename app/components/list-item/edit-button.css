@@ -1,0 +1,7 @@
+.rt-item-edit-button.mdc-button .mdc-button__icon {
+  color: gray;
+  margin-right: 0;
+}
+.rt-is-edited .rt-item-edit-button.mdc-button .mdc-button__icon {
+  color: black;
+}

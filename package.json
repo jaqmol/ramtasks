@@ -1,0 +1,49 @@
+{
+  "name": "ramtastic",
+  "version": "0.1.2",
+  "description": "Tasks lists in RAMTASTIC",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaqmol/ramtasks.git"
+  },
+  "keywords": [
+    "tasks",
+    "todo",
+    "ramtastic"
+  ],
+  "author": "Ronny Reichmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaqmol/ramtasks/issues"
+  },
+  "homepage": "https://github.com/jaqmol/ramtasks#readme",
+  "devDependencies": {
+    "@material/button": "^0.35.0",
+    "@material/fab": "^0.35.0",
+    "@material/list": "^0.35.0",
+    "@material/ripple": "^0.35.0",
+    "@material/top-app-bar": "^0.35.2",
+    "auid": "^2.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "dexie": "^2.0.3",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
+    "node-sass": "^4.9.0",
+    "ramda": "^0.25.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

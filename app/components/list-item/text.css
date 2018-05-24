@@ -1,0 +1,6 @@
+.rt-item-text {
+  flex-grow: 2;
+}
+.rt-item-text:focus {
+    outline: none;
+}

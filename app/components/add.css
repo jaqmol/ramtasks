@@ -1,0 +1,11 @@
+.rt-add-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 5%;
+  transition: right 500ms ease-in-out;
+}
+@media (max-width: 1111px) {
+  .rt-add-btn {
+    right: 25px;
+  }
+}
