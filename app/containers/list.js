@@ -4,6 +4,7 @@ import {
 import commence from '../actions/commence'
 import conclude from '../actions/conclude'
 import change from '../actions/change'
+import remove from '../actions/remove'
 import {
   get,
   path,
@@ -24,6 +25,7 @@ const composeAugmentTask = pipe(
     commence,
     conclude,
     change,
+    remove,
   }),
 )
 

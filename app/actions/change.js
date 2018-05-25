@@ -4,9 +4,11 @@ import {
   converge,
   assoc,
   propEq,
+  propSatisfies,
   useWith,
   identity,
   map,
+  filter,
   ifElse,
   __,
   tap,
@@ -14,11 +16,19 @@ import {
   merge,
   flip,
   curryN,
+  nAry,
   nth,
   append,
   apply,
   applyTo,
   objOf,
+  T,
+  F,
+  cond,
+  partial,
+  call,
+  zipWith,
+  isEmpty,
 } from 'ramda'
 import {
   get,
@@ -29,7 +39,13 @@ import { putTask } from '../db'
 
 const p = path('tasks')
 
-const mapTask = ([id, v]) => ifElse(
+// const mapOrFilter = (id, v) => ifElse(
+//   propSatisfies(isEmpty, 'text', v),
+//   filter,
+//   map
+// )
+
+const mergeAndSaveTask = (id, v) => ifElse(
   propEq('id', id),
   pipe(
     merge(__, v),
@@ -38,15 +54,39 @@ const mapTask = ([id, v]) => ifElse(
   identity,
 )
 
+// const removeTask = id => ifElse(
+//   propEq('id', id),
+//   pipe(
+//     () => console.log('SHOULD DELETE TASK', id),
+//     always(F),
+//   ),
+//   T,
+// )
+
+// const chooseMapper = (id, v) => ifElse(
+//   propSatisfies(isEmpty, 'text', v),
+//   removeTask,
+//   mergeAndSaveTask,
+// )
+
 const change = curryN(2, pipe(
-  unapply(identity),
+  // unapply(identity),
   converge(
     pipe(map, set(p)),
     [
-      mapTask,
+      mergeAndSaveTask,
       pipe(always(p), get),
     ]
   ),
 ))
+
+// const change2 = curryN(2, converge(
+//   call,
+//   [
+//     mapOrFilter,
+//     chooseMapper,
+//     pipe(always(p), get),
+//   ]
+// ))
 
 export default change

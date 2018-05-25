@@ -13,5 +13,11 @@ const putTask = task => db.tasks.put(task)
     console.error('Error putting new task into DB:', err)
   })
 
+const removeTask = id => db.tasks.delete(id)
+  .then(() => {})
+  .catch(err => {
+    console.error('Error removing task from DB:', err)
+  })
+
 export default db
-export { getAllTasks, putTask }
+export { getAllTasks, putTask, removeTask }

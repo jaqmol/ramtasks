@@ -24,9 +24,11 @@ import {
   unapply,
   pick,
   flip,
+  trim,
   // assoc,
   // __,
   last,
+  isEmpty,
 } from 'ramda'
 
 import './text.css'
@@ -35,14 +37,19 @@ const preventDefault = tap(ev => ev.preventDefault())
 const textContent = pathProp(path('target.textContent'))
 
 const editingEvents = pipe(
-  props(['change', 'id', 'conclude']),
-  apply((change, id, conclude) => when(
+  props(['change', 'remove', 'id', 'conclude']),
+  apply((change, remove, id, conclude) => when(
     propEq('key', 'Enter'),
     pipe(
       preventDefault,
       textContent,
-      objOf('text'),
-      change(id),
+      trim,
+      tap(tc => console.log(`text content is "${tc}"`)),
+      ifElse(
+        isEmpty,
+        () => remove(id),
+        pipe(objOf('text'), change(id)),
+      ),
       conclude,
     )
   )),
