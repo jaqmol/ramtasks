@@ -1,6 +1,6 @@
 import {
   n3,
-} from '../../../ramtastic'
+} from 'ramtastic'
 import "@material/top-app-bar/mdc-top-app-bar.scss"
 import { MDCTopAppBar } from '@material/top-app-bar'
 import './header.css'

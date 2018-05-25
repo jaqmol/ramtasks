@@ -1,6 +1,6 @@
 import {
   n3,
-} from '../../../../ramtastic'
+} from 'ramtastic'
 import {
   prop,
   propEq,

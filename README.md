@@ -4,6 +4,11 @@ TODO implementation in [RAMTASTIC](https://github.com/jaqmol/ramtasks)
 
 This is the practical test project under which [RAMTASTIC](https://github.com/jaqmol/ramtasks) is developed.
 
+## Contribute
+There's no intention to make Ramtastic the next React. It's just that Ramda is worth learning. And how to learn better than writing your own frontend-framework 😉
+
+I'm myself new to the "Zen of Ramda", so feel free to complain or suggest: [Twitter handle: yaqmol](https://twitter.com/yaqmol)
+
 ## This project showcases:
 
 ### Components
@@ -22,13 +27,6 @@ This is the practical test project under which [RAMTASTIC](https://github.com/ja
 ### Integration with Material Components
 - Ramtasks uses [Material Components Web](https://material-components.github.io/material-components-web-catalog/#/) now
 
-## Contributors welcome!
-I'm myself new to the "Zen of Ramda", so feel free to complain: [Twitter handle: yaqmol](https://twitter.com/yaqmol).
-
-## *A note about relative referencing*
-
-*The project references ramtastic relatively to allow for fast syncing of changes in ramtastic itself, until it's matured a bit more. Ramtastic is assumed to be located within the same parent directory as this project.*
-
-## Packaging is done with Parcel
+## Packaging is done with Webpack
 
 `npm start` script is provided.

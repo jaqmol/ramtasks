@@ -1,4 +1,4 @@
-import Dexie from 'dexie';
+import Dexie from 'dexie'
 
 const db = new Dexie('RamTasksDB')
 db.version(1).stores({

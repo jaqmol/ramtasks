@@ -1,6 +1,6 @@
 import {
   n3,
-} from '../../../../ramtastic'
+} from 'ramtastic'
 import {
   prop,
   props,
@@ -34,7 +34,7 @@ const onClickAction = apply(pipe(
 ))
 const attribs = ifElse(
   propEq('isEdited', true),
-  pipe(props(['conclude', 'id']), onClickAction),
+  pipe(props(['conclude', 'id']), onClickAction), // TODO: change must be called too
   pipe(props(['commence', 'id']), onClickAction),
 )
 const contents = ifElse(

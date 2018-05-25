@@ -12,7 +12,7 @@ import {
   get,
   set,
   path,
-} from '../../../ramtastic'
+} from 'ramtastic'
 import { removeTask } from '../db'
 
 const p = path('tasks')

@@ -34,7 +34,7 @@ import {
   get,
   set,
   path,
-} from '../../../ramtastic'
+} from 'ramtastic'
 import { putTask } from '../db'
 
 const p = path('tasks')

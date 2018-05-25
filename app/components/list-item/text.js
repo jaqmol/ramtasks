@@ -2,7 +2,7 @@ import {
   n3,
   n2,
   path,
-} from '../../../../ramtastic'
+} from 'ramtastic'
 import {
   map,
   prop,

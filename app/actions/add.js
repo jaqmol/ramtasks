@@ -12,7 +12,7 @@ import {
   get,
   set,
   path,
-} from '../../../ramtastic'
+} from 'ramtastic'
 import auid from 'auid'
 
 import { putTask } from '../db'

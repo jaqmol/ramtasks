@@ -5,7 +5,7 @@ import {
   set,
   path,
   get,
-} from '../../ramtastic'
+} from 'ramtastic'
 import {
   pipeP,
 } from 'ramda'
@@ -14,7 +14,7 @@ import layout from './containers/layout'
 import { getAllTasks } from './db'
 const p = path('tasks')
 
-const taskToStateTree = pipeP(getAllTasks, set(p))
+const pullTasksFromDb = pipeP(getAllTasks, set(p))
 
 initRender(queryFn('#app'), layout)
 initState({
@@ -22,4 +22,4 @@ initState({
   edited: null,
 })
 
-taskToStateTree()
+pullTasksFromDb()

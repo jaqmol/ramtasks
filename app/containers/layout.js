@@ -3,7 +3,7 @@ import {
   n3,
   path,
   get,
-} from '../../../ramtastic'
+} from 'ramtastic'
 import {
   always,
   isNil,

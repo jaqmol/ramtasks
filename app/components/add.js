@@ -1,6 +1,6 @@
 import {
   n3,
-} from '../../../ramtastic'
+} from 'ramtastic'
 import {
   prop,
   objOf,
@@ -20,7 +20,6 @@ import {
 import './add.css'
 
 const attribs = pipe(
-  prop('add'),
   objOf('click'),
   objOf('on'),
   merge(rippleHook),

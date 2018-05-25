@@ -1,6 +1,6 @@
 import {
   n3,
-} from '../../../ramtastic'
+} from 'ramtastic'
 import {
   map,
 } from 'ramda'

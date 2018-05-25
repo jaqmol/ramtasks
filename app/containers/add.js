@@ -10,7 +10,7 @@ import {
 } from 'ramda'
 
 const add = pipe(
-  always({add: addAction}),
+  always(addAction),
   addComponent,
 )
 

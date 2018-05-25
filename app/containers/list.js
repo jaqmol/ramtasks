@@ -8,7 +8,7 @@ import remove from '../actions/remove'
 import {
   get,
   path,
-} from '../../../ramtastic'
+} from 'ramtastic'
 import {
   pipe,
   always,

@@ -6,7 +6,7 @@ import {
 import {
   set,
   path,
-} from '../../../ramtastic'
+} from 'ramtastic'
 
 const p = path('edited')
 
