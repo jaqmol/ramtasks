@@ -19,9 +19,11 @@ This is the practical test project under which [RAMTASTIC](https://github.com/ja
 - State-change-events on paths can be subscribed to
 - Re-rendering is triggered automatically on state changes
 
-## This is a very early stage of development
+### Integration with Material Components
+- Ramtasks uses [Material Components Web](https://material-components.github.io/material-components-web-catalog/#/) now
 
-Contributors welcome! I'm myself quite new to Ramda, so feel free to jump in.
+## Contributors welcome!
+I'm myself new to the "Zen of Ramda", so feel free to complain: [Twitter handle: yaqmol](https://twitter.com/yaqmol).
 
 ## *A note about relative referencing*
 
