@@ -2,7 +2,6 @@ import {
   n3,
 } from 'ramtastic'
 import {
-  prop,
   props,
   propEq,
   ifElse,
@@ -10,18 +9,12 @@ import {
   merge,
   pipe,
   objOf,
-  append,
-  flip,
-  always,
-  tap,
 } from 'ramda'
 import {
   rippleHook,
 } from '../../utils'
 
 import './edit-button.css'
-
-const flappend = flip(append)
 
 const onClickAction = apply(pipe(
   (action, id, text) => ev => {

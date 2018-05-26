@@ -6,7 +6,6 @@ import {
   merge,
   objOf,
   tap,
-  pipeP,
 } from 'ramda'
 import {
   get,

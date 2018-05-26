@@ -5,7 +5,6 @@ import {
   reject,
   propEq,
   nthArg,
-  identity,
   tap,
 } from 'ramda'
 import {

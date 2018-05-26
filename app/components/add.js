@@ -2,15 +2,9 @@ import {
   n3,
 } from 'ramtastic'
 import {
-  prop,
   objOf,
   pipe,
-  apply,
-  tap,
-  mergeAll,
   merge,
-  append,
-  __,
 } from 'ramda'
 import "@material/fab/mdc-fab.scss"
 import {

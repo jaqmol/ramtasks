@@ -6,11 +6,8 @@ import {
   propEq,
   ifElse,
   always,
-  merge,
   mergeAll,
   pipe,
-  props,
-  apply,
   unapply,
   objOf,
   converge,
@@ -30,7 +27,7 @@ const clickEvents = ifElse(
   propEq('isEdited', true),
   always({}),
   pipe(
-    ({change, id, done}) => ev => {
+    ({change, id, done}) => () => {
       change({id, done: !done})
     },
     objOf('click'),

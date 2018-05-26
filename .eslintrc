@@ -1,6 +1,10 @@
 {
-    "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
-    }
+  "parser": "babel-eslint",
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-console": 0
+  },
+  "globals": {
+    "console": false
+  }
 }

@@ -1,11 +1,8 @@
 import {
   pipe,
   always,
-  tap,
   prop,
-  propEq,
   ifElse,
-  merge,
   isEmpty,
   unless,
   isNil,
@@ -14,7 +11,6 @@ import {
   set,
   get,
   path,
-  call,
 } from 'ramtastic'
 import change from './change'
 import remove from './remove'

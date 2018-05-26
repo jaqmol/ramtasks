@@ -1,37 +1,23 @@
 import {
   n3,
-  n2,
   path,
 } from 'ramtastic'
 import {
-  map,
   prop,
-  props,
   propEq,
   ifElse,
   path as pathProp,
   when,
   always,
   merge,
-  mergeAll,
   pipe,
-  apply,
   objOf,
   tap,
   converge,
-  append,
   identity,
   unapply,
-  pick,
-  flip,
   trim,
-  // assoc,
-  // __,
   last,
-  isEmpty,
-  T,
-  cond,
-  unary,
 } from 'ramda'
 
 import './text.css'
@@ -45,7 +31,7 @@ const updateEditedText = ({update, id}) => pipe(
   merge({id}),
   update,
 )
-const concludeEditing = ({change, conclude, id}) => when(
+const concludeEditing = ({conclude}) => when(
   propEq('key', 'Enter'),
   pipe(
     preventDefault,
