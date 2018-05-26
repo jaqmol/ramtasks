@@ -1,19 +1,21 @@
 import {
   pipe,
-  // always,
+  always,
   tap,
+  objOf,
+  merge,
+  converge,
+  propEq,
+  find,
+  unary,
+  identity,
 } from 'ramda'
 import {
   set,
   path,
+  get,
 } from 'ramtastic'
 
-const p = path('edited')
-
-const commence = pipe(
-  // tap(arg => { console.log('commence ...', arg) }),
-  set(p),
-  // tap(arg => { console.log('... commenced:', arg) }),
-)
+const commence = set(path('edited'))
 
 export default commence

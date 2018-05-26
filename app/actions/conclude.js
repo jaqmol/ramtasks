@@ -2,19 +2,36 @@ import {
   pipe,
   always,
   tap,
+  prop,
+  propEq,
+  ifElse,
+  merge,
+  isEmpty,
+  unless,
+  isNil,
 } from 'ramda'
 import {
   set,
+  get,
   path,
+  call,
 } from 'ramtastic'
-
-const p = path('edited')
+import change from './change'
+import remove from './remove'
 
 const conclude = pipe(
+  always(path('edited')),
+  get,
+  unless(
+    isNil,
+    ifElse(
+      pipe(prop('text'), isEmpty),
+      pipe(prop('id'), remove),
+      change,
+    )
+  ),
   always(null),
-  // tap(() => { console.log('conclude ...') }),
-  set(p),
-  // tap(arg => { console.log('... concluded:', arg) }),
+  set(path('edited')),
 )
 
 export default conclude

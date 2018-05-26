@@ -29,43 +29,45 @@ import {
   // __,
   last,
   isEmpty,
+  T,
+  cond,
+  unary,
 } from 'ramda'
 
 import './text.css'
 
+// Events
 const preventDefault = tap(ev => ev.preventDefault())
-const textContent = pathProp(path('target.textContent'))
-
-const editingEvents = pipe(
-  props(['change', 'remove', 'id', 'conclude']),
-  apply((change, remove, id, conclude) => when(
-    propEq('key', 'Enter'),
-    pipe(
-      preventDefault,
-      textContent,
-      trim,
-      tap(tc => console.log(`text content is "${tc}"`)),
-      ifElse(
-        isEmpty,
-        () => remove(id),
-        pipe(objOf('text'), change(id)),
-      ),
-      conclude,
-    )
-  )),
-  objOf('keypress'),
-  objOf('on'),
+const getTextContent = pipe(pathProp(path('target.textContent')), trim)
+const updateEditedText = ({update, id}) => pipe(
+  getTextContent,
+  objOf('text'),
+  merge({id}),
+  update,
+)
+const concludeEditing = ({change, conclude, id}) => when(
+  propEq('key', 'Enter'),
+  pipe(
+    preventDefault,
+    getTextContent,
+    conclude,
+  )
+)
+const editingEvents = converge(
+  pipe(merge, objOf('on')),
+  [
+    pipe(updateEditedText, objOf('input')),
+    pipe(concludeEditing, objOf('keypress')),
+  ],
 )
 
+// View
 const focusElement = pipe(
   unapply(identity),
   last,
   prop('elm'),
   e => e.focus(),
 )
-
-// const hook = assoc(__, focusElement, __)
-
 const textAttribs = ifElse(
   propEq('isEdited', true),
   pipe(

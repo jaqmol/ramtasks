@@ -30,10 +30,9 @@ const clickEvents = ifElse(
   propEq('isEdited', true),
   always({}),
   pipe(
-    props(['change', 'id', 'done']),
-    apply((change, id, done) => ev => {
-      change(id, {done: !done})
-    }),
+    ({change, id, done}) => ev => {
+      change({id, done: !done})
+    },
     objOf('click'),
     objOf('on'),
   )

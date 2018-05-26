@@ -5,6 +5,7 @@ import commence from '../actions/commence'
 import conclude from '../actions/conclude'
 import change from '../actions/change'
 import remove from '../actions/remove'
+import update from '../actions/update'
 import {
   get,
   path,
@@ -16,9 +17,11 @@ import {
   merge,
   converge,
   propEq,
+  prop,
 } from 'ramda'
 
 const composeAugmentTask = pipe(
+  prop('id'),
   propEq('id'),
   taskIsEdited => task => merge(task, {
     isEdited: taskIsEdited(task),
@@ -26,6 +29,7 @@ const composeAugmentTask = pipe(
     conclude,
     change,
     remove,
+    update,
   }),
 )
 

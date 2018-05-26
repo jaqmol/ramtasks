@@ -24,9 +24,9 @@ import './edit-button.css'
 const flappend = flip(append)
 
 const onClickAction = apply(pipe(
-  (action, id) => ev => {
+  (action, id, text) => ev => {
     ev.stopPropagation()
-    action(id)
+    action({id, text})
   },
   objOf('click'),
   objOf('on'),
@@ -34,8 +34,8 @@ const onClickAction = apply(pipe(
 ))
 const attribs = ifElse(
   propEq('isEdited', true),
-  pipe(props(['conclude', 'id']), onClickAction), // TODO: change must be called too
-  pipe(props(['commence', 'id']), onClickAction),
+  pipe(props(['conclude', 'id', 'text']), onClickAction),
+  pipe(props(['commence', 'id', 'text']), onClickAction),
 )
 const contents = ifElse(
   propEq('isEdited', true),
