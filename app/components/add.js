@@ -1,5 +1,5 @@
 import {
-  n3,
+  vnode,
 } from 'ramtastic'
 import {
   objOf,
@@ -19,10 +19,10 @@ const attribs = pipe(
   merge(rippleHook),
 )
 
-const add = n3(
+const add = vnode(
   'button.mdc-fab.material-icons.rt-add-btn',
   attribs,
-  n3('span.mdc-fab__icon', {}, 'add'),
+  vnode('span.mdc-fab__icon', {}, 'add'),
 )
 
 export default add

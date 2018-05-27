@@ -20,7 +20,7 @@ import {
   prop,
 } from 'ramda'
 
-const composeAugmentTask = pipe(
+const augmentPredicate = pipe(
   prop('id'),
   propEq('id'),
   taskIsEdited => task => merge(task, {
@@ -35,11 +35,12 @@ const composeAugmentTask = pipe(
 
 const editedState = always(path('edited'))
 const tasksState = always(path('tasks'))
+// const routeState = always(path('route'))
 
 const list = converge(
   pipe(map, listComponent),
   [
-    pipe(editedState, get, composeAugmentTask),
+    pipe(editedState, get, augmentPredicate),
     pipe(tasksState, get),
   ]
 )

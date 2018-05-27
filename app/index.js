@@ -10,6 +10,7 @@ import {
 } from 'ramda'
 import layout from './containers/layout'
 import { getAllTasks } from './db'
+import './routing.js'
 const p = path('tasks')
 
 const pullTasksFromDb = pipeP(getAllTasks, set(p))

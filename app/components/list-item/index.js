@@ -1,5 +1,5 @@
 import {
-  n3,
+  vnode,
 } from 'ramtastic'
 import {
   prop,
@@ -50,7 +50,7 @@ const attribs = converge(
   ]
 )
 
-const item = n3(
+const item = vnode(
   'li.mdc-list-item',
   attribs,
   [

@@ -1,5 +1,5 @@
 import {
-  n3,
+  vnode,
 } from 'ramtastic'
 import {
   map,
@@ -10,6 +10,6 @@ import './list.css'
 
 import item from './list-item'
 
-const list = n3('ul.mdc-list.rt-list', {}, map(item))
+const list = vnode('ul.mdc-list.rt-list', {}, map(item))
 
 export default list

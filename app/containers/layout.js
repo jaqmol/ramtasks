@@ -1,5 +1,5 @@
 import {
-  n3,
+  vnode,
   path,
   get,
 } from 'ramtastic'
@@ -20,7 +20,7 @@ const editedState = always(path('edited'))
 const editedNotNull = pipe(editedState, get, isNil, not)
 const attribs = pipe(editedNotNull, objOf('rt-in-edit'), objOf('class'))
 
-const layout = n3(
+const layout = vnode(
   'div.rt-layout',
   attribs,
   [

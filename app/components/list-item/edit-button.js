@@ -1,5 +1,5 @@
 import {
-  n3,
+  vnode,
 } from 'ramtastic'
 import {
   props,
@@ -32,10 +32,10 @@ const attribs = ifElse(
 )
 const contents = ifElse(
   propEq('isEdited', true),
-  n3('i.material-icons.mdc-button__icon', {}, 'check'),
-  n3('i.material-icons.mdc-button__icon', {}, 'edit'),
+  vnode('i.material-icons.mdc-button__icon', {}, 'check'),
+  vnode('i.material-icons.mdc-button__icon', {}, 'edit'),
 )
-const editButton = n3(
+const editButton = vnode(
   'button.mdc-list-item__meta.mdc-button.rt-item-edit-button',
   attribs,
   contents,

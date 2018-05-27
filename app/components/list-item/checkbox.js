@@ -1,5 +1,5 @@
 import {
-  n3,
+  vnode,
 } from 'ramtastic'
 import {
   propEq,
@@ -7,7 +7,7 @@ import {
   always,
 } from 'ramda'
 
-const checkbox = n3(
+const checkbox = vnode(
   'span.mdc-list-item__graphic.material-icons',
   {},
   ifElse(

@@ -1,5 +1,5 @@
 import {
-  n3,
+  vnode,
   path,
 } from 'ramtastic'
 import {
@@ -70,7 +70,7 @@ const textAttribs = ifElse(
     props: {contentEditable: 'false'},
   }),
 )
-const text = n3(
+const text = vnode(
   'div.mdc-list-item__text.rt-item-text',
   textAttribs,
   prop('text'),

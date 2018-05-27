@@ -1,3 +1,6 @@
-.rt-is-edited {
+.rt-list li.rt-is-edited {
   background-color: white;
+}
+.rt-list li:not(.rt-is-edited) {
+  cursor: pointer;
 }
