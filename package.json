@@ -1,6 +1,6 @@
 {
   "name": "ramtasks",
-  "version": "0.1.8",
+  "version": "0.1.11",
   "description": "RAMTASTIC Tasks",
   "main": "index.js",
   "scripts": {
@@ -48,7 +48,7 @@
     "auid": "^2.0.0",
     "dexie": "^2.0.4",
     "ramda": "^0.25.0",
-    "ramtastic": "^0.1.8",
+    "ramtastic": "^0.1.11",
     "router5": "^6.2.2"
   }
 }

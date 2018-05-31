@@ -11,6 +11,8 @@ import {
   unapply,
   objOf,
   converge,
+  merge,
+  not,
 } from 'ramda'
 import {
   rippleHook,
@@ -35,10 +37,12 @@ const clickEvents = ifElse(
   )
 )
 
-const styleClasses = pipe(
-  prop('isEdited'),
-  objOf('rt-is-edited'),
-  objOf('class'),
+const styleClasses = converge(
+  pipe(merge, objOf('class')),
+  [
+    pipe(prop('isEdited'), objOf('rt-is-edited')),
+    pipe(prop('isVisible'), not, objOf('rt-is-hidden'))
+  ]
 )
 
 const attribs = converge(

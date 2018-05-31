@@ -6,7 +6,7 @@ body {
 .rt-layout {
   flex-grow: 2;
   transition: background-color 350ms ease-in-out;
-  padding: 0 8px;
+  padding: 0;
 }
 .rt-layout.rt-in-edit {
   background-color: lightgray;

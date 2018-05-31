@@ -1,13 +1,22 @@
 # ramtasks
 
-TODO implementation in [RAMTASTIC](https://github.com/jaqmol/ramtasks)
+TODO implementation in [RAMTASTIC](https://github.com/jaqmol/ramtasks) (practical test project).
 
-This is the practical test project under which [RAMTASTIC](https://github.com/jaqmol/ramtasks) is developed.
+## Ramtastic Feature Showcase
+
+The following features of Ramtastic are showcased in this project:
+
+- Single immutable state tree with paths for getting and settings
+- Project structure:
+  - Components
+  - Actions
+  - Containers
+- Routing
 
 ## Contribute
 There's no intention to make Ramtastic the next React. It's just that Ramda is worth learning. And how to learn better than writing your own frontend-framework 😉
 
-I'm myself new to the "Zen of Ramda", so feel free to complain or suggest: [Twitter handle: yaqmol](https://twitter.com/yaqmol)
+Feel free to complain or suggest: [Twitter handle: yaqmol](https://twitter.com/yaqmol)
 
 ## This project showcases:
 

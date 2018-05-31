@@ -12,7 +12,7 @@ import {
 } from 'ramda'
 import list from './list'
 import add from './add'
-import header from '../components/header'
+import header from './header'
 
 import './layout.css'
 
