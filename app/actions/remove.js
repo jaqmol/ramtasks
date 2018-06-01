@@ -17,9 +17,9 @@ import { removeTask } from '../db'
 const p = path('tasks')
 
 const removeFromState = converge(
-  pipe(reject, set(p)),
+  pipe(reject, tap(tsks => console.log(`new tasks: "${tsks.map(t => t.id)}"`)), set(p)),
   [
-    pipe(nthArg(0), propEq('id')),
+    pipe(nthArg(0), tap(id => console.log(`removing id ${id}`)), propEq('id')),
     pipe(always(p), get),
   ]
 )

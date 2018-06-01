@@ -6,6 +6,7 @@
     "no-console": 0
   },
   "globals": {
-    "console": false
+    "console": false,
+    "setTimeout": false
   }
 }

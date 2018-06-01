@@ -1,6 +1,6 @@
 {
   "name": "ramtasks",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "description": "RAMTASTIC Tasks",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "@material/list": "^0.35.0",
     "@material/ripple": "^0.35.0",
     "@material/top-app-bar": "^0.35.2",
+    "auid": "^2.5.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
@@ -48,7 +49,6 @@
     "auid": "^2.0.0",
     "dexie": "^2.0.4",
     "ramda": "^0.25.0",
-    "ramtastic": "^0.1.11",
-    "router5": "^6.2.2"
+    "ramtastic": "^0.2.0"
   }
 }

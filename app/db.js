@@ -5,7 +5,7 @@ db.version(1).stores({
     tasks: 'id, text, done'
 })
 
-const getAllTasks = () => db.tasks.toArray()
+const getAllTasks = () => db.tasks.orderBy('id').toArray()
 
 const putTask = task => db.tasks.put(task)
   .then(() => {})
