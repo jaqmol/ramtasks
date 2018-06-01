@@ -1,23 +1,37 @@
-import Dexie from 'dexie'
+import {
+  get as idbGet,
+  set as idbSet,
+  del as idbDel,
+  keys,
+} from 'idb-keyval';
+import {
+  unary,
+  binary,
+  map,
+  pipeP,
+  sort,
+  ascend,
+  identity,
+  converge,
+  prop,
+} from 'ramda'
+const get = unary(idbGet)
+const set = binary(idbSet)
+const del = unary(idbDel)
+const allP = ps => Promise.all(ps)
 
-const db = new Dexie('RamTasksDB')
-db.version(1).stores({
-    tasks: 'id, text, done'
-})
+const getAllTasks = pipeP(
+  keys,
+  sort(ascend(identity)),
+  map(get),
+  allP,
+)
 
-const getAllTasks = () => db.tasks.orderBy('id').toArray()
+const putTask = converge(
+  set,
+  [prop('id'), identity],
+)
 
-const putTask = task => db.tasks.put(task)
-  .then(() => {})
-  .catch(err => {
-    console.error('Error putting new task into DB:', err)
-  })
+const removeTask = del
 
-const removeTask = id => db.tasks.delete(id)
-  .then(() => {})
-  .catch(err => {
-    console.error('Error removing task from DB:', err)
-  })
-
-export default db
 export { getAllTasks, putTask, removeTask }

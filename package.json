@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "auid": "^2.0.0",
-    "dexie": "^2.0.4",
+    "idb-keyval": "^3.0.4",
     "ramda": "^0.25.0",
     "ramtastic": "^0.2.0"
   }
